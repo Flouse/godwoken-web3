@@ -254,8 +254,14 @@ export class Eth {
     return "0x0";
   }
 
+  /**
+   * Get the current price per gas in shannon.
+   *   1 CKB = 100,000,000 Shannons
+   * @returns gasPrice (unit: shannon)
+   */
   async gasPrice(args: []): Promise<HexNumber> {
-    return "0x1";
+    const GodwokenFeeConfig = await this.rpc.getFeeConfig();
+    return toHex(GodwokenFeeConfig.fee_rate);
   }
 
   /**

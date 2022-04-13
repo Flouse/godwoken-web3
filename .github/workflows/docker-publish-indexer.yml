@@ -2,7 +2,7 @@ name: Docker Build Push (Indexer)
 
 on:
   push:
-    branches: [main, hot-fix, compatibility-breaking-changes, fix-login]
+    branches: [main, hot-fix, compatibility-breaking-changes, 'v1.1*']
     # Publish semver tags as releases.
     tags: ["v*.*.*"]
   pull_request:
